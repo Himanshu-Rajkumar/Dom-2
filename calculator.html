@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+    <h1>Masai School</h1>
+    <div id="parent">
+        
+        
+        <div>
+            <div class="child-1">
+                <p>Enter Numbers</p>
+             </div>
+            <div class="child-2">
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="opr">+</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="opr">-</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="opr">*</button>
+                <button onclick="dele()" id="remove">C</button>
+
+                <button class="btn">0</button>
+                <button id="result" class="opr" >=</button>
+                <button class="opr">/</button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    let head = document.querySelector("p")
+    let button = document.getElementsByClassName("btn")
+    let operator = document.getElementsByClassName("opr")
+    let equalto = document.getElementById("result")
+    let Remove=document.getElementById("remove")
+    
+
+    let firstnumber = ""
+    let secondnumber = ""
+    isFirstnumber = true
+
+   
+   
+    equalto.addEventListener("click", function () {
+        head.innerText = calculate(firstnumber, secondnumber, operatorbutton)
+       
+    })
+
+
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", function () {
+            if (isFirstnumber == true) {
+                firstnumber += button[i].innerText
+                head.innerText = firstnumber
+
+            }
+            else {
+                secondnumber += button[i].innerText
+                head.innerText = secondnumber
+            }
+
+        })
+    }
+   
+    
+    for (let i = 0; i < operator.length; i++) {
+        operator[i].addEventListener("click", function () {
+            isFirstnumber = false;
+            operatorbutton = operator[i].innerText
+            head.innerText=head.innerText.Remove()
+
+        })
+    }
+    function calculate(firstnumber, secondnumber, operatorbutton) {
+        switch (operatorbutton) {
+            case ("+"):
+                return Number(firstnumber) + Number(secondnumber)
+                
+            case ("-"):
+                return Number(firstnumber) - Number(secondnumber)
+                
+            case ("*"):
+                return Number(firstnumber) * Number(secondnumber)
+               
+            case ("/"):
+                return Number(firstnumber) / Number(secondnumber)
+                
+
+        }
+    }
+   
+</script>
