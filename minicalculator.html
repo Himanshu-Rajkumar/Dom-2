@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #buttons{
+            margin-left: 20px;
+        }
+       
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="first" placeholder="enter 1st Number">
+    <input type="text" name="" id="Second" placeholder="enter 2nd Number"><br><br>
+    <div id="buttons">
+    <button onclick="add()">Add</button>
+    <button onclick="sub()">Subtract</button>
+    <button onclick="mul()">Multiply</button>
+    <button onclick="div()">Divide</button>
+    </div>
+    
+</body>
+</html>
+<script>
+    let first=document.querySelector("#first")
+    let Second=document.querySelector("#Second")
+    let buttons=document.querySelector("#buttons")
+    function add(){
+        alert( Number(first.value)+Number(Second.value) )
+    }
+    function sub(){
+        alert( Number(first.value)-Number(Second.value) )
+    }
+    function mul(){
+        alert( Number(first.value)*Number(Second.value) )
+    }
+    function div(){
+        alert( Number(first.value)/Number(Second.value) )
+    }
+
+    
+
+</script>
